@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "types": ["svelte", "vite/client"],
+    "paths": {
+      "$lib/*": ["./src/lib/*"],
+      "@tanstack/svelte-router": [
+        "../../../packages/svelte-router/src/index.ts"
+      ],
+      "@tanstack/svelte-router/*": ["../../../packages/svelte-router/src/*"],
+      "@tanstack/svelte-start": ["../../../packages/svelte-start/src/index.ts"],
+      "@tanstack/svelte-start/client": [
+        "../../../packages/svelte-start/src/client/index.ts"
+      ],
+      "@tanstack/svelte-start/server": [
+        "../../../packages/svelte-start/src/server/index.ts"
+      ],
+      "@tanstack/svelte-start/plugin/vite": [
+        "../../../packages/svelte-start/src/plugin/vite.ts"
+      ]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.svelte", "vite.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

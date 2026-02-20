@@ -1,0 +1,20 @@
+{
+  "name": "tanstack-svelte-start-adapter",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "examples/**/start-*"
+  ],
+  "scripts": {
+    "build": "bun run build:router && bun run build:start",
+    "build:router": "cd packages/svelte-router && bun run build",
+    "build:start": "cd packages/svelte-start && bun run build",
+    "dev:example": "cd examples/svelte/start-basic && bun run dev",
+    "typecheck": "cd packages/svelte-router && bun run typecheck && cd ../../packages/svelte-start && bun run typecheck",
+    "clean": "rm -rf packages/*/dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
