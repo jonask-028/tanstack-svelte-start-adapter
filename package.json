@@ -1,20 +1,106 @@
 {
-  "name": "tanstack-svelte-start-adapter",
-  "private": true,
-  "workspaces": [
-    "packages/*",
-    "examples/**/start-*"
-  ],
+  "name": "@tanstack/svelte-start",
+  "version": "0.1.0",
+  "description": "TanStack Start adapter for Svelte 5 — full-stack SSR framework",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "svelte": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./client": {
+      "types": "./src/client/index.ts",
+      "svelte": "./dist/client/index.js",
+      "import": "./dist/client/index.js"
+    },
+    "./server": {
+      "types": "./src/server/index.ts",
+      "svelte": "./dist/server/index.js",
+      "import": "./dist/server/index.js"
+    },
+    "./plugin/vite": {
+      "types": "./src/plugin/vite.ts",
+      "import": "./dist/plugin/vite.js"
+    },
+    "./config": {
+      "types": "./src/config.ts",
+      "import": "./dist/config.js"
+    },
+    "./server-handler": {
+      "types": "./src/server-handler/index.ts",
+      "import": "./dist/server-handler/index.js"
+    },
+    "./client-runtime": {
+      "types": "./src/client-runtime/index.ts",
+      "svelte": "./dist/client-runtime/index.js",
+      "import": "./dist/client-runtime/index.js"
+    },
+    "./client-rpc": {
+      "types": "./src/client-rpc/index.ts",
+      "import": "./dist/client-rpc/index.js"
+    },
+    "./server-rpc": {
+      "types": "./src/server-rpc/index.ts",
+      "import": "./dist/server-rpc/index.js"
+    },
+    "./ssr-rpc": {
+      "types": "./src/ssr-rpc/index.ts",
+      "import": "./dist/ssr-rpc/index.js"
+    },
+    "./server-only": {
+      "types": "./src/server-only.ts",
+      "import": "./dist/server-only.js"
+    },
+    "./client-only": {
+      "types": "./src/client-only.ts",
+      "import": "./dist/client-only.js"
+    }
+  },
   "scripts": {
-    "build": "bun run build:router && bun run build:start",
-    "build:router": "cd packages/svelte-router && bun run build",
-    "build:start": "cd packages/svelte-start && bun run build",
-    "dev:example": "cd examples/svelte/start-basic && bun run dev",
-    "typecheck": "cd packages/svelte-router && bun run typecheck && cd ../../packages/svelte-start && bun run typecheck",
-    "clean": "rm -rf packages/*/dist"
+    "build": "tsc --noEmit && svelte-package -i src -o dist",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/svelte-router": "github:jonask-028/tanstack-router-svelte-adapter",
+    "@tanstack/start-client-core": "^1.100.0",
+    "@tanstack/start-server-core": "^1.100.0",
+    "@tanstack/start-plugin-core": "^1.100.0",
+    "@tanstack/router-core": "^1.100.0",
+    "@tanstack/start-server-functions-fetcher": "^1.100.0",
+    "@tanstack/start-server-functions-handler": "^1.100.0",
+    "@tanstack/start-server-functions-client": "^1.100.0",
+    "@tanstack/start-server-functions-server": "^1.100.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0",
+    "vite": "^6.0.0",
+    "@tanstack/router-core": "^1.100.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "typescript": "^5.7.0"
-  }
+    "@sveltejs/package": "^2.3.0",
+    "@types/node": "^25.4.0",
+    "svelte": "^5.0.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonask-028/tanstack-svelte-start-adapter.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "tanstack",
+    "start",
+    "svelte",
+    "svelte5",
+    "ssr",
+    "full-stack"
+  ]
 }

@@ -1,5 +1,5 @@
 import { createRoute } from "@tanstack/svelte-router";
-import { createServerFn } from "@tanstack/svelte-start";
+import { createServerFn } from "../../../../../src";
 import { rootRoute } from "./__root";
 import Posts from "./posts.svelte";
 

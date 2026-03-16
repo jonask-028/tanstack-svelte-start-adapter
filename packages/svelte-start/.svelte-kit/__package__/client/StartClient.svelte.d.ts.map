@@ -1,1 +1,0 @@
-{"version":3,"file":"StartClient.svelte.d.ts","sourceRoot":"","sources":["../../src/client/StartClient.svelte.ts"],"names":[],"mappings":"AAIA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,uBAAuB,CAAC;AAEtD,KAAK,gBAAgB,GAAI;IAAE,MAAM,EAAE,SAAS,CAAA;CAAE,CAAC;AAahD,QAAA,MAAM,WAAW,sDAAwC,CAAC;AAC1D,KAAK,WAAW,GAAG,UAAU,CAAC,OAAO,WAAW,CAAC,CAAC;AAClD,eAAe,WAAW,CAAC"}

@@ -9,7 +9,7 @@ import {
   createStartHandler,
   defaultStreamHandler,
   createServerEntry,
-} from "@tanstack/svelte-start/server";
+} from "../../../../src/server";
 
 const fetch = createStartHandler(defaultStreamHandler);
 

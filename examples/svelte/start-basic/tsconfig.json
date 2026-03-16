@@ -15,19 +15,15 @@
     "paths": {
       "$lib/*": ["./src/lib/*"],
       "@tanstack/svelte-router": [
-        "../../../packages/svelte-router/src/index.ts"
+        "../../../../tanstack-router-svelte-adapter/src/index.ts"
       ],
-      "@tanstack/svelte-router/*": ["../../../packages/svelte-router/src/*"],
-      "@tanstack/svelte-start": ["../../../packages/svelte-start/src/index.ts"],
-      "@tanstack/svelte-start/client": [
-        "../../../packages/svelte-start/src/client/index.ts"
+      "@tanstack/svelte-router/*": [
+        "../../../../tanstack-router-svelte-adapter/src/*"
       ],
-      "@tanstack/svelte-start/server": [
-        "../../../packages/svelte-start/src/server/index.ts"
-      ],
-      "@tanstack/svelte-start/plugin/vite": [
-        "../../../packages/svelte-start/src/plugin/vite.ts"
-      ]
+      "@tanstack/svelte-start": ["../../../src/index.ts"],
+      "@tanstack/svelte-start/client": ["../../../src/client/index.ts"],
+      "@tanstack/svelte-start/server": ["../../../src/server/index.ts"],
+      "@tanstack/svelte-start/plugin/vite": ["../../../src/plugin/vite.ts"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.svelte", "vite.config.ts"],

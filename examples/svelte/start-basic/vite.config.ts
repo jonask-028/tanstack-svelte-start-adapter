@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { tanstackStart } from "@tanstack/svelte-start/plugin/vite";
+import { tanstackStart } from "../../../src/plugin/vite";
 
 export default defineConfig({
   plugins: [
