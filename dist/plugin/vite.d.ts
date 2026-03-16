@@ -20,6 +20,7 @@
  *   export default defineConfig({ plugins: [tanstackStart()] })
  */
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+import "./patch-generator.js";
 import { type TanStackStartInputConfig } from "@tanstack/start-plugin-core";
 import type { PluginOption } from "vite";
 export interface TanStackStartSvelteOptions {

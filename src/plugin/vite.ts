@@ -23,6 +23,10 @@
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+// Side-effect import: patches @tanstack/router-generator with svelte target.
+// Runs before start-plugin-core loads. Works with Node.js ESM evaluation order.
+// For Bun, use postinstall instead (Bun pre-reads modules before evaluation).
+import "./patch-generator.js";
 import {
   TanStackStartVitePluginCore,
   type TanStackStartInputConfig,

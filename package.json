@@ -60,7 +60,11 @@
   "scripts": {
     "build": "tsc --noEmit && svelte-package -i src -o dist",
     "dev": "tsc --watch",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node dist/plugin/patch-generator.js"
+  },
+  "bin": {
+    "patch-svelte-target": "dist/plugin/patch-generator.js"
   },
   "dependencies": {
     "@tanstack/svelte-router": "github:jonask-028/tanstack-svelte-router-adapter",
