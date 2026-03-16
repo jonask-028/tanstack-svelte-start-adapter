@@ -63,7 +63,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@tanstack/svelte-router": "github:jonask-028/tanstack-router-svelte-adapter",
+    "@tanstack/svelte-router": "github:jonask-028/tanstack-svelte-router-adapter",
     "@tanstack/start-client-core": "^1.100.0",
     "@tanstack/start-server-core": "^1.100.0",
     "@tanstack/start-plugin-core": "^1.100.0",
