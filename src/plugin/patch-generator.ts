@@ -8,12 +8,7 @@
  * appears first in the importing module.
  */
 
-import {
-  readFileSync,
-  writeFileSync,
-  readdirSync,
-  existsSync,
-} from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 
 const SVELTE_TEMPLATE_CASE = `case "svelte": return {
@@ -110,7 +105,7 @@ function patchRouterGeneratorTemplate(): void {
       code = code.replace(
         /default:\s*throw new Error\(`router-generator: Unknown target type:/,
         SVELTE_TEMPLATE_CASE +
-          'default: throw new Error(`router-generator: Unknown target type:',
+          "default: throw new Error(`router-generator: Unknown target type:",
       );
 
       writeFileSync(templatePath, code);
@@ -118,7 +113,9 @@ function patchRouterGeneratorTemplate(): void {
     }
 
     if (patchedCount > 0) {
-      console.log(`[svelte-start] Patched ${patchedCount} router-generator template(s) with svelte target`);
+      console.log(
+        `[svelte-start] Patched ${patchedCount} router-generator template(s) with svelte target`,
+      );
     }
   } catch {
     // If patching fails, the error will surface later as "Unknown target type: svelte"
