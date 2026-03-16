@@ -7,7 +7,7 @@
  * into memory. ES module evaluation order guarantees this when the import
  * appears first in the importing module.
  */
-import { readFileSync, writeFileSync, readdirSync, existsSync, } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { resolve, join } from "node:path";
 const SVELTE_TEMPLATE_CASE = `case "svelte": return {
 \t\t\t\tfullPkg: "@tanstack/svelte-router",
@@ -90,7 +90,7 @@ function patchRouterGeneratorTemplate() {
             if (code.includes('case "svelte"'))
                 continue;
             code = code.replace(/default:\s*throw new Error\(`router-generator: Unknown target type:/, SVELTE_TEMPLATE_CASE +
-                'default: throw new Error(`router-generator: Unknown target type:');
+                "default: throw new Error(`router-generator: Unknown target type:");
             writeFileSync(templatePath, code);
             patchedCount++;
         }
